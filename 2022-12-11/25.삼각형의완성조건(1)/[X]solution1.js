@@ -6,8 +6,9 @@
 
 function solution(sides) {
   const [a, b, c] = sides;
-  // a가 제일 작은 경우
+  
   if (a < b && a < c) {
+    // a가 제일 작은 경우
     if (c < b) {
       // b가 제일 긴 변
       if (b < a + c) {
@@ -15,7 +16,7 @@ function solution(sides) {
       } else {
         return 2;
       }
-    } else if (b < c) {
+    } else {
       // c가 제일 긴 변
       if (c < a + b) {
         return 1;
@@ -23,27 +24,40 @@ function solution(sides) {
         return 2;
       }
     }
-    // b가 제일 작은 경우
   } else if (b < a && b < c) {
-    if(a < c) { // c가 제일 긴 변
-      if(c < a + b) {
+    // b가 제일 작은 경우
+    if (a < c) {
+      // c가 제일 긴 변
+      if (c < a + b) {
         return 1;
       } else {
         return 2;
       }
-    } else if (c < a){ //a가 제일 긴 변
-      if(a < a + c) {
+    } else {
+      //a가 제일 긴 변
+      if (a < b + c) {
         return 1;
       } else {
         return 2;
       }
     }
-  }
-
-  if (a + b > c || a + c > b || b + c > a) {
-    return 1;
-  } else {
-    return 2;
+  } else if (c < a && c < b) {
+    // c가 제일 작은 경우
+    if (a < b) {
+      // b가 제일 긴 변
+      if (b < a + c) {
+        return 1;
+      } else {
+        return 2;
+      }
+    } else  {
+      // a가 제일 긴 변
+      if (a < b + c) {
+        return 1;
+      } else {
+        return 2;
+      }
+    }
   }
 }
 

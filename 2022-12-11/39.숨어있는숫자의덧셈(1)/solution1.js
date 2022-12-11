@@ -4,11 +4,12 @@
 
 function solution(my_string) {
   var answer = 0;
-  my_string.split("").forEach((a) => {
-    if (parseInt(a) > 0) {
-      answer = answer + parseInt(a);
+  for (let i = 0; i < my_string.length; i++) {
+    let paredStr = parseInt(my_string[i]);
+    if (paredStr > 0) {
+      answer += paredStr;
     }
-  });
+  }
   return answer;
 }
 

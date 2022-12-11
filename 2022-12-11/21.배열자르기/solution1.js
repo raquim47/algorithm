@@ -7,7 +7,6 @@ function solution(numbers, num1, num2) {
   for (let i = 0; i < num2 - num1 + 1; i++) {
     arr[i] = numbers[num1 + i];
   }
-  // var answer = numbers.slice(num1, num2 + 1);
   return arr;
 }
 

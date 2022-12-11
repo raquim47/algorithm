@@ -5,7 +5,6 @@
 function solution(my_string, letter) {
   let str = "";
   for (let i = 0; i < my_string.length; i++) {
-    // 인덱스 순서대로 넣으면 공백이 생긴다 -> arr끝자리에 넣는다
     if (my_string[i] !== letter) {
       str += my_string[i];
     }

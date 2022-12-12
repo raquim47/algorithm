@@ -5,7 +5,7 @@
 function solution(num_list) {
   let arr = [];
   for (let i = 0; i < num_list.length; i++) {
-    arr.push(num_list[num_list.length - (i + 1)]);
+    arr[i] = num_list[num_list.length - (i + 1)];
   }
   return arr;
 }

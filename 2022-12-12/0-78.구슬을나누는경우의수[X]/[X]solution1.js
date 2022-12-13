@@ -1,6 +1,6 @@
-//school.programmers.co.kr/learn/courses/30/lessons/120840?language=javascript
+// https://school.programmers.co.kr/learn/courses/30/lessons/120840?language=javascript
 
-https: function solution(balls, share) {
+function solution(balls, share) {
   let fac1 = 1;
   let fac2 = 1;
   let fac3 = 1;

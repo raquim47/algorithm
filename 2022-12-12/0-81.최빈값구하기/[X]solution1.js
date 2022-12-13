@@ -24,15 +24,13 @@ function solution(array) {
       if(maxCount < count){
         maxCount = count;
         maxNum = beforeNum;
+      } else if (maxCount === count) {
+        maxNum = -1;
       }
       count = ""
     }
   }
-  if(maxCount === 0){
-    return -1;
-  } else {
-    return maxNum;
-  }
+
 }
 
 console.log(solution([1, 2, 3, 3, 3, 4])); //	3

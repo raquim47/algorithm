@@ -17,7 +17,6 @@ function solution(n) {
       break;
     }
   }
-  // return reversRadix3;
   let answer = 0;
   for (let i = reversRadix3.length - 1; i >= 0; i--) {
     answer += reversRadix3[i] * 3 ** (reversRadix3.length - i - 1);

@@ -13,7 +13,6 @@ function setDivisor(num){
 }
 
 function solution(n, m) {
-  // 최대공약수
   const divisorArrN = setDivisor(n);
   const divisorArrM = setDivisor(m);
 

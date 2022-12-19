@@ -72,3 +72,24 @@ if문 줄이기 실패
 
 1-37
 비밀지도 설명해보기
+
+1-38
+함수로 다시 나눠보기
+
+function test(value) {
+  return value[0];
+}
+
+// console.log(test("abc")); // a
+// console.log(test(123)); // undefined
+// console.log(test(NaN)); // undefined
+// console.log(test(null)); // TypeError: Cannot read properties of null
+// console.log(test(undefined)); // TypeError: Cannot read properties of undefined
+
+최대값 구하는 경우, 
+어떤 경우에서든 a[0] < b // -> false 가 나오게 하려면
+a에 넣어야하는 값
+
+1-48.
+sort를 for문으로 바꿨더니 시간초과
+

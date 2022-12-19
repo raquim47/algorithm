@@ -2,24 +2,13 @@
 
 function returnBinary(number, numlength) {
   let str = "";
-  
-  // 이진법 (거꾸로) 구하기
-  while (str.length <= numlength) {
+
+  // 이진법 (거꾸로) 구하기, 빈자리엔 0 넣기
+  while (str.length < numlength) {
     str += (number % 2) + "";
-
-    if (number >= 2) {
-      number = Math.floor(number / 2);
-    } else {
-      break;
-    }
-  }
-  
-  // 빈자리에 0 채워넣기
-  for (let i = str.length; i < numlength; i++) {
-    str += "0"
+    number = Math.floor(number / 2);
   }
 
-  // 거꾸로 돌리기
   let result = "";
 
   for (let i = str.length - 1; i >= 0; i--) {
@@ -36,7 +25,7 @@ function solution(n, arr1, arr2) {
   }
 
   combinedArr = [];
-  
+
   for (let i = 0; i < n; i++) {
     let str = "";
 
@@ -54,6 +43,6 @@ function solution(n, arr1, arr2) {
   return combinedArr;
 }
 
-// console.log(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])); // ["#####","# # #", "### #", "# ##", "#####"]
+console.log(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28])); // ["#####","# # #", "### #", "# ##", "#####"]
 
-// console.log(solution(6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10])); // ["######", "### #", "## ##", " #### ", " #####", "### # "]
+console.log(solution(6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10])); // ["######", "### #", "## ##", " #### ", " #####", "### # "]

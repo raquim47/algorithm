@@ -18,10 +18,11 @@ function transformText(word, count) {
   } else {
     wordI = checkWordI(word, upperCase);
   }
-  if (count % 2 !== 0) {
-    return lowerCase[wordI];
-  } else {
+
+  if (count % 2 === 0) {
     return upperCase[wordI];
+  } else {
+    return lowerCase[wordI];
   }
 }
 
@@ -31,13 +32,14 @@ function solution(s) {
 
   for (let i = 0; i < s.length; i++) {
     if (s[i] === " ") {
-      count = 0;
       result += " ";
+      count = 0;
     } else {
       result += transformText(s[i], count);
       count++;
     }
   }
+  
   return result;
 }
 

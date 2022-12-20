@@ -8,13 +8,13 @@ function returnBinary(number, numlength) {
     str += (number % 2) + "";
     number = Math.floor(number / 2);
   }
-
+  
   let result = "";
 
   for (let i = str.length - 1; i >= 0; i--) {
     result += str[i];
   }
-
+  console.log(str, result)
   return result;
 }
 

@@ -45,12 +45,12 @@ function solution(strings, n) {
         mark = j;
       }
     }
+
     newArr[i] = arr[mark];
     arr[mark] = 0;
   }
 
-  return newArr
+  return newArr;
 }
-
 // console.log(solution(["sun", "bed", "car"], 1)); //	["car", "bed", "sun"]
 // console.log(solution(["abce", "abcd", "cdx"], 2)); //["abcd", "abce", "cdx"]

@@ -1,17 +1,14 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/132267?language=javascript
 
 function solution(a, b, n) {
-  
-  // 2,1,20
   let answer = 0;
 
-  while(n >= a){
-    let rest = n % a
-    answer += Math.floor(n / a) * b; 
-    n = Math.floor(n / a) * b + rest; 
-  } 
-  
-  
+  while (n >= a) {
+    let rest = n % a;
+    answer += Math.floor(n / a) * b;
+    n = Math.floor(n / a) * b + rest;
+  }
+
   return answer;
 }
 

@@ -9,7 +9,6 @@ function solution(s) {
     for (let j = 0; j < str.length; j++) {
       if (s[i] === str[j]) {
         temp = i - j;
-        break
       }
     }
     str += s[i];

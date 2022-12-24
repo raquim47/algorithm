@@ -13,7 +13,7 @@ function solution(t, p) {
 
   let count = 0;
   for (let i = 0; i < arr.length; i++) {
-    if(arr[i] <= p){
+    if(Number(arr[i]) <= Number(p)){
       count++
     }
   }

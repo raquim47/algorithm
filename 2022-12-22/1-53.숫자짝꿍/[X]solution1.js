@@ -13,8 +13,9 @@ function solution(X, Y) {
       }
     }
   }
+  
   const answer = arr.slice().sort((a,b) => b - a).join("");
-  return answer ? answer : -1
+  return answer ? answer : -1;
 }
 
 console.log(solution("100", "2345")); //	"-1"

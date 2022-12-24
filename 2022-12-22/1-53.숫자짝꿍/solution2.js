@@ -4,7 +4,7 @@ function sub(numbers, arr1, arr2) {
   const maxLength = arr1.length > arr2.length ? arr1.length : arr2.length;
   for (let i = 0; i < maxLength; i++) {
     arr1[i] && arr1[i] !== "-" && numbers[arr1[i]].X++;
-    arr2[i] && arr2[i] !== "-" &&numbers[arr2[i]].Y++;
+    arr2[i] && arr2[i] !== "-" && numbers[arr2[i]].Y++;
   }
 
   return numbers;
@@ -25,7 +25,7 @@ function solution(X, Y) {
   };
   const scoredNumbers = sub(numbers, X, Y);
 
-  // console.log(scoredNumbers);
+  console.log(scoredNumbers);
   let answer = "";
 
   for (const key in scoredNumbers) {
@@ -48,10 +48,9 @@ function solution(X, Y) {
   return answer;
 }
 
-console.log(solution("1000000002", "20200")); //	"-1"
 
-console.log(solution("100", "2345")); //	"-1"
-console.log(solution("100", "203045")); //"0"
+// console.log(solution("100", "2345")); //	"-1"
+// console.log(solution("100", "203045")); //"0"
 // console.log(solution("100", "123450")); //	"10"
-// console.log(solution("12321", "42531")); //"321"
+console.log(solution("12321", "42531")); //"321"
 // console.log(solution("5525", "1255")); //"552"

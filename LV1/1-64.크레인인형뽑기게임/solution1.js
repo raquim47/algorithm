@@ -18,7 +18,7 @@ function solution(board, moves) {
         break;
       }
     }
-    console.log(board, arr);
+    // console.log(board, arr);
   }
   return count;
 }

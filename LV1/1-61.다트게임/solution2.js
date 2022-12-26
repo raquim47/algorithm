@@ -7,7 +7,7 @@ function solution(dartResult) {
   let currentScore = 0;
   let beforeScore = 0;
   let calc = 0;
-
+  
   for (let i = 0; i < dartResult.length; i++) {
     if (Number(dartResult[i]) > -1) {
       // 숫자일때 : currentNum에 저장, currentScore를 beforeScore에 저장

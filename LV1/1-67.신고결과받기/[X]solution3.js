@@ -1,6 +1,7 @@
 // https://school.programmers.co.kr/learn/courses/30/lessons/92334?language=javascript
 
-// 케이스 4개 시간초과
+// 케이스 7개 시간초과
+
 // 중복 제거
 function removeDup(arr) {
   const newArr = [];
@@ -22,34 +23,49 @@ function removeDup(arr) {
 }
 
 function solution(id_list, report, k) {
+  // 신고 중복 제거
   const noDupReport = removeDup(report);
 
   const reportedList = {};
-  for (let i = 0; i < id_list.length; i++) {
-    reportedList[id_list[i]] = [];
-  }
   // console.log("reportedList :", reportedList);
 
   for (let i = 0; i < noDupReport.length; i++) {
     const [reporter, reported] = noDupReport[i].split(" ");
-    reportedList[reported].push(reporter);
+    if (!reportedList[reported]) {
+      reportedList[reported] = 0;
+    }
+    reportedList[reported] += 1;
   }
   // console.log("reportedList :", reportedList);
+  const banList = [];
+  for (const id in reportedList) {
+    if (reportedList[id] >= k) {
+      banList.push(id);
+    }
+  }
+  console.log(banList);
+  console.log("noDupReport", noDupReport);
 
-  const result = new Array(id_list.length).fill(0);
-  // console.log(result);
-  for (const key in reportedList) {
-    if (reportedList[key].length >= k) {
-      for (let i = 0; i < reportedList[key].length; i++) {
-        for (let j = 0; j < id_list.length; j++) {
-          if (reportedList[key][i] === id_list[j]) {
-            result[j] += 1;
-          }
+  const reporterObj = {};
+  for (let i = 0; i < banList.length; i++) {
+    // [ 'frodo', 'neo' ]
+    for (let j = 0; j < noDupReport.length; j++) {
+      const [reporter, reported] = noDupReport[j].split(" ");
+      if (banList[i] === reported) {
+        if (!reporterObj[reporter]) {
+          reporterObj[reporter] = 0;
         }
+        reporterObj[reporter] += 1;
       }
     }
   }
-  return result;
+
+  const answerArr = [];
+  for (let i = 0; i < id_list.length; i++) {
+    const num = reporterObj[id_list[i]] ? reporterObj[id_list[i]] : 0;
+    answerArr.push(num);
+  }
+  return answerArr;
 }
 
 console.log(

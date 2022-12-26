@@ -52,6 +52,7 @@ function solution(id_list, report, k) {
   }
   // console.log(mailList)
   const answer = new Array(id_list.length).fill(0);
+  
   for (let i = 0; i < mailList.length; i++) {
     for (let j = 0; j < id_list.length; j++) {
       if(mailList[i] === id_list[j]){

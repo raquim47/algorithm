@@ -27,29 +27,37 @@ function findDistance(target, current) {
 // console.log("distance", findDistance(1, 1));
 function solution(numbers, hand) {
   let answer = "";
-
   let currentL = -1;
   let currentR = -1;
 
   for (let i = 0; i < numbers.length; i++) {
+    // 1,4,7일때
     if (numbers[i] % 3 === 1) {
       currentL = numbers[i];
       answer += "L";
-    } else if (numbers[i] % 3 === 0 && numbers[i] !== 0) {
+      continue;
+    }
+    // 3,6,9일때
+    if (numbers[i] % 3 === 0 && numbers[i] !== 0) {
       currentR = numbers[i];
       answer += "R";
-    } else {
-      if (
-        findDistance(numbers[i], currentL) > findDistance(numbers[i], currentR)
-      ) {
+      continue;
+    }
+    // 2,5,8,0일때
+    if (numbers[i] % 3 === 2 || numbers[i] === 0) {
+      const leftToTarget = findDistance(numbers[i], currentL);
+      const rightToTarget = findDistance(numbers[i], currentR);
+      
+      if (leftToTarget > rightToTarget) {
+        // 타겟까지의 거리가 오른쪽이 가까울 때
         currentR = numbers[i];
         answer += "R";
-      } else if (
-        findDistance(numbers[i], currentL) < findDistance(numbers[i], currentR)
-      ) {
+      } else if (leftToTarget < rightToTarget) {
+        // 타겟까지의 거리가 왼쪽이 가까울 때
         currentL = numbers[i];
         answer += "L";
       } else {
+        // 타겟까지의 거리가 왼쪽, 오른쪽 같을 때
         if (hand === "right") {
           currentR = numbers[i];
           answer += "R";

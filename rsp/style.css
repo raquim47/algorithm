@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  width: 700px;
+  text-align: center;
+}
+
+.result { 
+  margin: 0;
+  font-size: 80px;
+}
+.screen {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.screen__vs strong{
+  font-size: 80px;
+}
+.screen__left,
+.screen__right {
+  width: 220px;
+}
+
+.hands button {
+  width: 130px;
+  font-size: 30px;
+  padding: 10px 0;
+  margin-right: 15px;
+}
+
+.hands button:last-child {
+  margin-right: 0;
+}
+
+.reset {
+  margin-top: 20px;
+}
+
+.reset button{
+  width: 200px;
+  font-size: 30px;
+  padding: 10px 0;
+}

@@ -6,36 +6,60 @@ const conWidth = container.clientWidth;
 const conHeight = container.clientHeight;
 canvas.width = conWidth;
 canvas.height = conHeight;
-
 const hero = {
-  x: 10,
-  y: 10,
-  width: 50,
-  height: 50,
-  draw() {
+  x: (conWidth - 40) / 2 ,
+  y: conHeight - 40 - 20,
+  width:40,
+  height:40,
+  draw(){
     ctx.fillStyle = 'green';
-    ctx.fillRect(
-      (conWidth - this.width) / 2,
-      conHeight - this.height - 20,
-      this.width,
-      this.height
-    );
-  },
+    ctx.fillRect(this.x, this.y, this.width, this.height)
+  }
+}
+// class Hero {
+//   constructor() {
+//     this.width = 40;
+//     this.height = 40;
+//     this.x = (conWidth - this.width) / 2;
+//     this.y = conHeight - this.height - 20;
+//   }
+//   draw() {
+//     ctx.fillStyle = 'green';
+//     ctx.fillRect(this.x, this.y, this.width, this.height);
+//   }
+// }
+
+const moveHero = () => {
+  requestAnimationFrame(moveHero);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  // const hero = new Hero();
+  // hero.x--;
+  hero.draw();
 };
 
+moveHero();
 class Enemy {
-  constructor(){
+  constructor() {
     this.x = 0;
     this.y = 0;
     this.width = 20;
     this.height = 20;
   }
-  draw(){
+  draw() {
     ctx.fillStyle = 'red';
-    ctx.fillRect(this.x, this.y, this.width, this.height)
+    ctx.fillRect(this.x, this.y, this.width, this.height);
   }
-
 }
-const enemy = new Enemy();
-enemy.draw();
-hero.draw();
+// Enemy.draw();
+// const createEnemy = () => {
+//   requestAnimationFrame(createEnemy);
+//   ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+//   // hero.x++;
+//   hero.draw();
+
+//   const enemy = new Enemy();
+//   enemy.draw();
+// };
+
+// createEnemy();

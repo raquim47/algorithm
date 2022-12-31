@@ -46,7 +46,6 @@ const judgeGame = (myHand) => {
 const clickHandBtn = (e) => {
   clearInterval(intervalId);
   const myHand = e.target.dataset.hand;
-  console.log(e.target.id)
   $user.src = `img/${myHand}.png`;
   $result.innerText = judgeGame(myHand);
   $handBtns.forEach(button => button.disabled = true);

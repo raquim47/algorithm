@@ -3,11 +3,11 @@
 // 유형 문자열로 출력하기
 function setResultType(score) {
   // 검사할 순서
-  const typeOrder = ["RT", "CF", "JM", "AN"];
+  const typeOrder = ['RT', 'CF', 'JM', 'AN'];
 
-  let result = "";
+  let result = '';
   // score 객체를 토대로 해당 유형의 값을 비교해 새 문자열에 담는다.
-  // 두 가지를 비교해서 점수가 높은 유형의 값을 담고 
+  // 두 가지를 비교해서 점수가 높은 유형의 값을 담고
   // 점수가 같으면 앞에 있는 유형을 담는다.
   for (let i = 0; i < typeOrder.length; i++) {
     const [type1, type2] = typeOrder[i];
@@ -24,7 +24,14 @@ function setResultType(score) {
 // 점수 obj 만들기
 function setScore(Q, answer) {
   const score = {
-    R: 0, T: 0, C: 0, F: 0, J: 0, M: 0, A: 0, N: 0,
+    R: 0,
+    T: 0,
+    C: 0,
+    F: 0,
+    J: 0,
+    M: 0,
+    A: 0,
+    N: 0,
   };
   // 질문 배열 for문 돌면서 type1, type2에 문자열에 앞뒤 타입 담아주고
   // 4보다 작으면 type1(앞)에 4 - 답변점수 값을 더함
@@ -48,4 +55,4 @@ function solution(survey, choices) {
 }
 
 // console.log(solution(["AN", "CF", "MJ", "RT", "NA"], [5, 3, 2, 7, 5])); // "TCMA"
-console.log(solution(["TR", "RT", "TR"], [7, 1, 3])); // "RCJA"
+console.log(solution(['TR', 'RT', 'TR'], [7, 1, 3])); // "RCJA"

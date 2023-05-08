@@ -8,7 +8,7 @@ function solution(s) {
   return `${splitArr[0]} ${splitArr[splitArr.length - 1]}`;
 }
 
-// ⭐️ .map(a => Number(a))가 불필요한 이유 : a - b와 같은 산술 연산자를 사용하면, 연산자의 피연산자들이 자동으로 숫자로 변환되는타입 강제 변환이 발생.
+// ⭐️ .map(a => Number(a))가 불필요한 이유 : a - b와 같은 산술 연산자를 사용하면, 연산자의 피연산자들이 자동으로 숫자로 변환되는 타입 강제 변환이 발생.
 
 console.log(solution('-1 2312')); //"-1 2312"
 // console.log(solution('1 2 3 4')); //"1 4"

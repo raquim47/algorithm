@@ -12,7 +12,7 @@ function areThereDuplicates(...arr) {
     if (obj[val]) {
       return true;
     } else {
-      (obj[val] = 1);
+      obj[val] = 1;
     }
   }
   return false;
@@ -21,17 +21,17 @@ function areThereDuplicates(...arr) {
 // 다중 포인터
 function areThereDuplicates2(...args) {
   // Two pointers
-  args.sort((a,b) => a > b);
+  args.sort((a, b) => (a > b ? 1 : -1));
   let start = 0;
   let next = 1;
-  while(next < args.length){
-    if(args[start] === args[next]){
-        return true
+  while (next < args.length) {
+    if (args[start] === args[next]) {
+      return true;
     }
-    start++
-    next++
+    start++;
+    next++;
   }
-  return false
+  return false;
 }
 
 //  One line
@@ -40,5 +40,5 @@ function areThereDuplicates3() {
 }
 
 // console.log(areThereDuplicates(1, 2, 3)); // false
-// console.log(areThereDuplicates(1, 2, 2)); // true
+console.log(areThereDuplicates(1, 2, 2)); // true
 console.log(areThereDuplicates2('a', 'b', 'c', 'a')); // true

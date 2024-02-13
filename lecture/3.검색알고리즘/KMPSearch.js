@@ -3,6 +3,9 @@
 // 1. 실패 배열을 구축.
 // 2. 이 배열을 사용하여 주어진 문자열에서 패턴을 검색.
 function KMPSearch(origin, keyword) {
+  if (origin.length < keyword.length) {
+    return 0;
+  }
   let count = 0;
   // failure 배열 세팅
   //  'omgo'에서 각 위치의 "failure" 값을 계산해보면, 

@@ -1,6 +1,6 @@
 // 이진 검색
 // 이진 검색은 분류된 배열을 대상으로만 작동한다. 숫자의 순서, 알파벳 순서 등.
-
+// 시간복잡도 : logN
 // 의사 코드
 // 1. BinarySearch는 분류된 배열과 찾아야할 값을 인자로 받는다.
 // 2. 좌측, 우측 포인터를 만든다.
@@ -11,15 +11,17 @@
 function binarySearch(arr, val) {
   let left = 0;
   let right = arr.length - 1;
-  let pointer = Math.floor((left + right) / 2);
-  while (arr[pointer] !== val && left <= right) {
+  while (left <= right) {
+    let pointer = Math.floor((left + right) / 2); // 2
+
     if (val < arr[pointer]) {
       right = pointer - 1;
-    } else {
+    } else if (arr[pointer] < val) {
       left = pointer + 1;
-      pointer = Math.floor((left + right) / 2);
+    } else {
+      return pointer;
     }
   }
-  return arr[pointer] === val ? pointer : -1;
+  return -1;
 }
 console.log(binarySearch([2, 3, 4, 5, 6], 6));

@@ -2,34 +2,25 @@
 
 function solution(files) {
   const list = files.reduce((array, filename) => {
-    const match = filename.match(/^([^\d]+)(\d+)/);
+    const [_, head, number] = filename.match(/^([^\d]+)(\d+)/);
     const file = {
       origin: filename,
-      head: match[1].toLowerCase(),
-      number: +match[2],
+      head: head.toLowerCase(),
+      number: +number,
     };
     array.push(file);
     return array;
   }, []);
 
   list.sort((a, b) => {
-    if (a.head < b.head) {
-      return -1;
-    } else if (a.head > b.head) {
-      return 1;
-    } else {
-      if (a.number < b.number) {
-        return -1;
-      } else if (a.number > b.number) {
-        return 1;
-      }
-      return 0;
+    if (a.head === b.head) {
+      return a.number - b.number;
     }
+    return a.head < b.head ? -1 : 1;
   });
 
   return list.map((s) => s.origin);
 }
-
 console.log(
   solution([
     'img12.png',

@@ -25,7 +25,7 @@ function solution(n) {
   let count = 0;
   let sum = 0;
 
-  while (end -1 <= n) {
+  while (end - 1 <= n) {
     if (sum < n) {
       sum += end;
       end++;
@@ -35,6 +35,7 @@ function solution(n) {
     } else {
       count++;
       if (end - start === 2) {
+        console.log(end, start, 'hi');
         return count + 1;
       }
       sum += end;

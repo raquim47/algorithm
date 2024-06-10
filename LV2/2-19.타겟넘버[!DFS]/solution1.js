@@ -2,19 +2,19 @@
 
 function solution(numbers, target) {
   let count = 0;
-  const stack = [{ index: 0, sum: 0 }];
+  const stack = [[0, 0]];
 
   while (stack.length > 0) {
-      const { index, sum } = stack.pop();
+    const [sum, index] = stack.pop();
 
-      if (index === numbers.length) {
-          if (sum === target) {
-              count++;
-          }
-      } else {
-          stack.push({ index: index + 1, sum: sum + numbers[index] });
-          stack.push({ index: index + 1, sum: sum - numbers[index] });
+    if (index === numbers.length) {
+      if (sum === target) {
+        count++;
       }
+    } else {
+      stack.push([sum - numbers[index], index + 1]);
+      stack.push([sum + numbers[index], index + 1]);
+    }
   }
 
   return count;

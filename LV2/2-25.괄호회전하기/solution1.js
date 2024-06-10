@@ -3,6 +3,7 @@
 function checkStr(str) {
   const map = { ']': '[', ')': '(', '}': '{' };
   if (map[str[0]]) return false;
+  console.log(str)
 
   const stack = [];
 

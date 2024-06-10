@@ -6,17 +6,17 @@ function solution(prices) {
   let stack = [];
 
   for (let i = 0; i < n; i++) {
-      while (stack.length && prices[stack[stack.length - 1]] > prices[i]) {
-          let idx = stack.pop();
-          answer[idx] = i - idx;
-      }
-      stack.push(i);
+    while (stack.length && prices[stack[stack.length - 1]] > prices[i]) {
+      let idx = stack.pop();
+      answer[idx] = i - idx;
+    }
+    stack.push(i);
   }
 
   // 배열 끝까지 가격이 유지되는 경우 처리
   while (stack.length) {
-      let idx = stack.pop();
-      answer[idx] = n - idx - 1;
+    let idx = stack.pop();
+    answer[idx] = n - idx - 1;
   }
 
   return answer;

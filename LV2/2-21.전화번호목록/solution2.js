@@ -2,22 +2,20 @@
 
 function solution(phone_book) {
   const hash = {};
-  let minLength = Infinity;
-  phone_book.forEach((num) => {
-    if (num.length < minLength) minLength = num.length;
+  // 전화번호를 해시 테이블에 저장
+  phone_book.forEach(num => {
     hash[num] = true;
   });
 
+  // 각 전화번호를 순회하며 접두사가 존재하는지 확인
   for (const num of phone_book) {
-    if (num.length <= minLength) continue;
-
     let str = '';
     for (let i = 0; i < num.length - 1; i++) {
       str += num[i];
-      if (str.length >= minLength && hash[str]) return false;
+      if (hash[str]) return false;  // 만약 현재 생성된 문자열이 해시 테이블에 존재하면 false 반환
     }
   }
-  return true;
+  return true;  // 접두사가 발견되지 않으면 true 반환
 }
 
 // console.log(solution(['119', '19'])); // false

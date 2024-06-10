@@ -3,6 +3,7 @@
 function solution(numbers, target) {
   let count = 0;
   (function dfs(index, sum) {
+    console.log(index, sum);
     if (index === numbers.length) {
       count += sum === target;
       return;

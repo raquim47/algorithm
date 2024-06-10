@@ -5,13 +5,12 @@ function solution(k, tangerine) {
     acc[cur] = (acc[cur] || 0) + 1;
     return acc;
   }, {});
-
-  const sortedEntries = Object.entries(hash).sort((a, b) => b[1] - a[1]);
+  const sortedEntries = Object.values(hash).sort((a, b) => b - a);
 
   let count = 0;
   let sum = 0;
 
-  for (const [_, value] of sortedEntries) {
+  for (const value of sortedEntries) {
     sum += value;
     count++;
     if (sum >= k) break;

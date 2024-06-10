@@ -14,6 +14,8 @@ function solution(n, words) {
       hash.add(word);
     }
   }
+
+  return [0,0]
 }
 
 console.log(

@@ -9,7 +9,6 @@ function solution(s) {
 
   // 각 집합의 길이에 따라 정렬
   tupleSets.sort((a, b) => a.length - b.length);
-
   const answer = [];
   const elementSet = new Set();
 

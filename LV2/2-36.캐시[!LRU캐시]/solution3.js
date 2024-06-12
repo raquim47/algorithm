@@ -6,8 +6,9 @@ function solution(cacheSize, cities) {
   if (cacheSize === 0) return cities.length * 5;
 
   let time = 0;
-  const cache = new Map();
-  const iterator = cache.keys();
+  const cache = new Set();
+  const keyIterator = cache.keys();
+
   for (let city of cities) {
     city = city.toLowerCase();
 
@@ -16,14 +17,14 @@ function solution(cacheSize, cities) {
       cache.delete(city);
     } else {
       if (cache.size === cacheSize) {
-        cache.delete(iterator.next().value);
+        cache.delete(keyIterator.next().value);
       }
       time += 5;
     }
-    cache.set(city, true);
+    cache.add(city);
   }
   return time;
 }
 
-// console.log(solution(2, ['Jeju', 'Pangyo', 'NewYork', 'newyork'])); // 16
+console.log(solution(2, ['Jeju', 'Pangyo', 'NewYork', 'newyork'])); // 16
 // console.log(solution(5, ['a', 'b', 'c', 'a'])); // 16

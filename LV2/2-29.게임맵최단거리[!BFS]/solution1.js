@@ -17,6 +17,7 @@ function solution(maps) {
     const [x, y, count] = queue.shift();
 
     if (x === n - 1 && y === m - 1) return count;
+    
     for (const [dx, dy] of directions) {
       const nx = x + dx;
       const ny = y + dy;

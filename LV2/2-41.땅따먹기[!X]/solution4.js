@@ -1,4 +1,4 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/92341
+// https://school.programmers.co.kr/learn/courses/30/lessons/12913
 
 function solution(land) {
   const rowLength = land.length;
@@ -9,29 +9,33 @@ function solution(land) {
 
   // 두 번째 행부터 시작
   for (let row = 1; row < rowLength; row++) {
-    let prevMax = -1,
-      prevMax2 = -1,
-      prevMaxIdx = -1;
-
-    for (let col = 0; col < colLength; col++) {
-      const prevValue = prevRow[col];
-      if (prevValue > prevMax) {
-        prevMax2 = prevMax;
-        prevMax = prevValue;
-        prevMaxIdx = col;
-      } else if (prevValue > prevMax2) {
-        prevMax2 = prevValue;
+      // 이전 행에서 가장 큰 값과 두 번째로 큰 값을 찾습니다.
+      let max1 = -1, max2 = -1, idx1 = -1;
+      
+      for (let col = 0; col < colLength; col++) {
+          const value = prevRow[col];
+          if (value > max1) {
+              max2 = max1;
+              max1 = value;
+              idx1 = col;
+          } else if (value > max2) {
+              max2 = value;
+          }
       }
-    }
-    const currRow = [];
-    for (let col = 0; col < colLength; col++) {
-      currRow[col] = land[row][col] + (col === prevMaxIdx ? prevMax2 : prevMax);
-    }
-    prevRow = currRow;
+      
+      // 현재 행의 각 칸에 이전 행의 최대 점수를 더하면서, 같은 열을 제외한 최대값을 사용합니다.
+      for (let col = 0; col < colLength; col++) {
+          land[row][col] += (col === idx1 ? max2 : max1);
+      }
+      
+      // 이전 행을 현재 행으로 업데이트합니다.
+      prevRow = land[row];
   }
   
+  // 마지막 행에서 가장 큰 값이 최대 점수입니다.
   return Math.max(...prevRow);
 }
+
 
 console.log(
   solution([

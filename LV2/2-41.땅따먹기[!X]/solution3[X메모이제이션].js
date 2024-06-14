@@ -1,4 +1,4 @@
-// https://school.programmers.co.kr/learn/courses/30/lessons/92341
+// https://school.programmers.co.kr/learn/courses/30/lessons/12913
 
 // 완전탐색 + 메모이제이션
 // 메모이제이션을 사용함에도 불구하고, 이 방식은 여전히 많은 재귀 호출을 필요로 하며, 호출 스택의 크기가 크거나 계산해야 할 행의 수가 매우 많은 경우에는 시스템 자원에 부담을 줄 수 있습니다. 이런 경우 동적 프로그래밍(Dynamic Programming) 접근법으로 최적화하는 것이 더욱 효율적일 수 있습니다.

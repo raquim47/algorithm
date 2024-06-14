@@ -4,7 +4,7 @@
 function solution(s) {
   if (s.length === 1) return 1;
 
-  let minLength = s.length;ㅌ
+  let minLength = s.length;
 
   for (let i = 1; i <= Math.floor(s.length / 2); i++) {
     let compressed = '';

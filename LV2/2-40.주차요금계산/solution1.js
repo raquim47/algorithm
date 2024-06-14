@@ -26,8 +26,8 @@ function solution(fees, records) {
       }
     }
   }
-  result.sort((a, b) => a - b);
-  return result.map((carNumber) => {
+  
+  return result.sort().map((carNumber) => {
     const { acc, action, time } = recordsMap.get(carNumber);
     const extraTime =
       acc -

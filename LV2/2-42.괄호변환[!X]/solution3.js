@@ -20,7 +20,6 @@ function solution(p) {
       .slice(1, -1)
       .split('')
       .reduce((acc, char) => acc + (char === '(' ? ')' : '('), '');
-    console.log(reversed);
     return `(${v})${reversed}`;
   }
 }

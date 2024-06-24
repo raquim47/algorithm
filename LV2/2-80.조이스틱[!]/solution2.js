@@ -27,4 +27,4 @@ function solution(name) {
 }
 
 // console.log(solution('JEROEN')); // 56
-console.log(solution('BAAAAAAAAAAAABBBBB')); // 결과값을 확인
+console.log(solution('BBBBBBAAAAAAAAAAAABBBBB')); // 결과값을 확인
